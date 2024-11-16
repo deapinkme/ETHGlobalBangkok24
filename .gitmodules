@@ -1,3 +1,6 @@
 [submodule "interest-bearing-stablecoin/lib/forge-std"]
 	path = interest-bearing-stablecoin/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "interest-bearing-stablecoin/lib/openzeppelin-contracts"]
+	path = interest-bearing-stablecoin/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
