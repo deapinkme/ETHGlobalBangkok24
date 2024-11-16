@@ -1,66 +1,37 @@
-## Foundry
+# Interest-Bearing Stablecoin
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This is a project for creating an **Interest-Bearing Stablecoin** powered by a smart contract. The stablecoin allows users to deposit USDC, convert it to STETH (Ethereum staking tokens), and withdraw the principal with accrued interest over time. The interest is calculated using a **Chronicle Labs Oracle** to fetch live interest rates, and the contract ensures secure and transparent handling of deposits and withdrawals.
 
-Foundry consists of:
+## Features
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- **Deposit**: Users can deposit USDC, which gets converted to STETH.
+- **Interest Accrual**: Interest is calculated based on the time elapsed since the deposit, fetched from the **Chronicle Labs Oracle**.
+- **Withdraw**: Users can withdraw their USDC principal along with the accrued interest after the specified duration.
+- **Trading Bot**: A Python trading bot that interacts with the smart contract and can perform trading activities to increase profits (buy/sell ETH to USDC).
 
-## Documentation
+## Project Structure
 
-https://book.getfoundry.sh/
+- `contracts/` - Contains Solidity smart contracts for the stablecoin.
+- `scripts/` - Contains deployment scripts and contract interaction scripts.
+- `src/` - Additional smart contract code for various functionalities.
+- `test/` - Solidity test files to ensure the contract logic works as expected.
+- `python/` - Contains the Python trading bot script for interacting with the smart contract.
 
-## Usage
+## Prerequisites
 
-### Build
+- **Node.js**: Needed for Foundry and running Solidity scripts.
+- **Foundry**: A toolkit for Ethereum development.
+- **Python**: Required to run the trading bot script.
 
-```shell
-$ forge build
-```
+## Installation
 
-### Test
+### 1. Install Foundry
 
-```shell
-$ forge test
-```
+Follow the Foundry installation guide: [Foundry Setup](https://github.com/foundry-rs/foundry).
 
-### Format
+### 2. Install Python Dependencies
 
-```shell
-$ forge fmt
-```
+Ensure you have Python installed. Then, in the `python/` directory, install the required libraries:
 
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+```bash
+pip install web3
